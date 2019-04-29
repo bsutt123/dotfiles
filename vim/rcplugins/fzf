@@ -1,0 +1,6 @@
+" fzf - the fuzzy finder of all the things
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" vim:ft=vim

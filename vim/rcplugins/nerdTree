@@ -1,0 +1,9 @@
+" Install NerdTree plugin
+
+Plug 'scrooloose/nerdtree'
+
+" Tree mappings
+nnoremap <leader>ntt :NERDTreeToggle<cr>
+nnoremap <leader>ntf :NERDTreeFocus<cr>
+
+" vim:ft=vim
