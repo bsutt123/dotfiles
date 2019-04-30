@@ -3,4 +3,6 @@
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+nmap <leader>ff :FZF<cr>
+
 " vim:ft=vim

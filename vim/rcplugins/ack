@@ -2,7 +2,7 @@
 
 Plug 'mileszs/ack.vim'
 
-nmap <LEADER>ck :Ack!<space>
+nmap <leader>ck :Ack!<space>
 nnoremap <leader>cc :cclose<cr>
 
 function! s:VisualAck()

@@ -1,3 +1,6 @@
+
+nnoremap <leader>qq :wq!<cr>
 nnoremap <leader>fs :w<cr>
+nnoremap <leader>qd :qa!<cr>
 
 "" vim:ft=vim
