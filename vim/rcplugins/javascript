@@ -1,9 +1,5 @@
 " JavaScript - JS syntax and indent settings, along with JSX support
 
-""Plug 'pangloss/vim-javascript'
-Plug 'Quramy/vim-js-pretty-template'
-Plug 'jason0x43/vim-js-indent'
-"Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs'
 Plug 'mxw/vim-jsx'
 

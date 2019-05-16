@@ -13,7 +13,9 @@ function! s:VisualAck()
   execute "Ack! '" . escaped_pattern . "'"
 endfunction
 
-nnoremap K :Ack! '<C-r><C-w>'<cr>
+
+" bind K to grep word under cursor
+nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
 vnoremap K :<C-u>call <sid>VisualAck()<cr>
 
 let g:ackprg = 'ag --nogroup --nocolor --column'

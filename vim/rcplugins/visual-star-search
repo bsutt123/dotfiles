@@ -1,5 +1,4 @@
 " Visual-star-search -
 
-Plug 'nelstrom/vim-visual-star-search'
 
 " vim:ft=vim
