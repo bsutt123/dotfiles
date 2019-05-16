@@ -1,0 +1,22 @@
+"Plug 'prabirshrestha/async.vim'
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'prabirshrestha/asyncomplete.vim'
+"Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+"" Javascript setup
+"Plug 'ryanolsonx/vim-lsp-typescript'
+
+"" Javascript Setup
+"Plug 'ryanolsonx/vim-lsp-javascript'
+
+"if executable('solargraph')
+"gem install solargraph
+"  au User lsp_setup call lsp#register_server({
+"   \ 'name': 'solargraph',
+"   \ 'cmd': {server_info->[&shell, &shellcmdflag, 'solargraph stdio']},
+"   \ 'initialization_options': {"diagnostics": "true"},
+"   \ 'whitelist': ['ruby'],
+"\ })
+"endif
+
+"" vim:ft=vim

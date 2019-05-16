@@ -1,0 +1,4 @@
+nnoremap <Leader>pc :PlugClean<cr>
+nnoremap <Leader>pi :PlugInstall<cr>
+
+"" vim:ft=vim

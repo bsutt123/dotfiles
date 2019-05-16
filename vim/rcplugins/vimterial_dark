@@ -1,0 +1,3 @@
+Plug 'larsbs/vimterial_dark', {'as':'vimterial'}
+
+"" vim:ft=vim
