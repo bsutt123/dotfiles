@@ -2,8 +2,8 @@
 " -------------------------------------------------------------------
 
 " Plug 'christoomey/vim-conflicted'
-Plug '~/code/vim/conflicted'
-nnoremap <leader>gnc :GitNextConflict<cr>
+"Plug '~/code/vim/conflicted'
+"nnoremap <leader>gnc :GitNextConflict<cr>
 
 " set stl+=%{ConflictedVersion()}
 

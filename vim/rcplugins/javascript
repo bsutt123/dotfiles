@@ -1,8 +1,10 @@
 " JavaScript - JS syntax and indent settings, along with JSX support
 
-Plug 'othree/yajs'
-Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 autocmd BufEnter *.es6 setf javascript
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
 "" vim:ft=vim

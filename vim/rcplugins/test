@@ -1,5 +1,5 @@
 
-Plug 'tpope/vim-fugitive'
+Plug 'janko/vim-test'
 
 " vim-test mappings
 nnoremap <silent> <Leader>tf :TestFile<CR>

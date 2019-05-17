@@ -4,7 +4,7 @@ Plug 'scrooloose/nerdtree'
 
 " Tree mappings
 nnoremap <leader>ntt :NERDTreeToggle<cr>
-nnoremap <leader>ntf :NERDTreeFocus<cr>
-nnoremap <leader>ntr :NERDTreeFind<cr>
+nnoremap <leader>ntr :NERDTreeFocus<cr>
+nnoremap <leader>ntf :NERDTreeFind<cr>
 
 " vim:ft=vim

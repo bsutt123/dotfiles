@@ -1,3 +1,0 @@
-Plug 'dracula/vim', {'as': 'dracula'}
-
-"" vim:ft=vim

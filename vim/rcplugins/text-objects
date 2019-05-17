@@ -6,7 +6,4 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-entire'
 Plug 'beloglazov/vim-textobj-quotes'
 
-" Plug 'christoomey/vim-textobj-codeblock'
-Plug '~/code/vim/textobj-codeblock'
-
 " vim:ft=vim
