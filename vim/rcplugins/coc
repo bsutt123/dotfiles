@@ -1,0 +1,4 @@
+" Or install latest release tag
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+
+"" vim:ft=vim
