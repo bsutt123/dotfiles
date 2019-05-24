@@ -1,3 +1,4 @@
+"" vim:ft=vim
 
 nnoremap <leader>qq :q<cr>
 nnoremap <leader>qw :wq!<cr>

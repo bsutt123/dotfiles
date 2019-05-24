@@ -1,0 +1,7 @@
+name: node-chat
+root: ~/chat/node-chat
+
+windows:
+  - General:
+  - nvim: nvim
+  - server: yarn start
