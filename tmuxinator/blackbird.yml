@@ -85,10 +85,21 @@ windows:
           - yarn test:watch
 
   - nvim:
+      layout: main-vertical
       panes:
         - nvim:
           - renamePane nvim
           - nvim
 
+  - nvim testing:
+      layout: main-vertical
+      panes:
+        - nvim:
+          - renamePane nvim-test
+          - nvim
+
+        - runner:
+          - renamePane runner
+          - nvim
 
   - Git: renamePane git

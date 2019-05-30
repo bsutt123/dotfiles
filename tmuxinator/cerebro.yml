@@ -1,0 +1,51 @@
+name: cerebro
+root: ~/patient_wisdom/cerebro
+
+windows:
+  - Blackbird:
+      root: ~/patient_wisdom/blackbird
+      layout: 0ca0,208x55,0,0{104x55,0,0[104x27,0,0,6,104x27,0,28,9],103x55,105,0[103x27,105,0,7,103x27,105,28,8]}
+
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - Beast:
+          - renamePane Beast
+          - killPort 3000
+          - rails s
+        - Mystique:
+          - renamePane Mystique
+          - yarn start:dev
+        - Jobs:
+          - renamePane Job
+          - bundle exec rake jobs:work
+        - Docker:
+          - renamePane Docker
+          - docker-compose up
+
+  - Cerebro:
+      panes:
+        - Cerebro:
+          - renamePane Cerebro
+          - killPort 4000
+          - rails s
+
+  - nvim:
+      layout: main-vertical
+      panes:
+        - nvim:
+          - renamePane nvim
+          - nvim
+
+  - nvim testing:
+      layout: main-vertical
+      panes:
+        - nvim:
+          - renamePane nvim-test
+          - nvim
+
+        - runner:
+          - renamePane runner
+
+  - Git: renamePane git

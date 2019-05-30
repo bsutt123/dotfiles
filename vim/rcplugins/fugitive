@@ -4,7 +4,7 @@ Plug 'tpope/vim-fugitive'
 
 nnoremap <leader>gs :Gvsplit<cr>
 nnoremap <leader>ge :Gedit<cr>
-nnoremap <leader>gb :GBlame<cr>
+nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gg :Ggrep<cr>
 

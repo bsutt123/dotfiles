@@ -1,5 +1,6 @@
 
 Plug 'janko/vim-test'
+Plug 'christoomey/vim-tmux-runner'
 
 " vim-test mappings
 nnoremap <silent> <Leader>tf :TestFile<CR>
@@ -8,4 +9,6 @@ nnoremap <silent> <Leader>tl :TestLast<CR>
 nnoremap <silent> <Leader>ts :TestSuite<CR>
 nnoremap <silent> <Leader>tv :TestVisit<CR>
 
+let test#strategy = 'vtr'
+let test#neovim#term_position = "topleft"
 "" vim:ft=vim

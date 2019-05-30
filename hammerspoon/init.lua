@@ -157,6 +157,11 @@ hs.hotkey.bind({"ctrl","alt","cmd"}, "E", function()
   moveCursorToCenter()
 end)
 
+hs.hotkey.bind({"ctrl","alt","cmd"}, "D", function()
+  hs.application.launchOrFocus("Tower")
+  moveCursorToCenter()
+end)
+
 function reloadConfig(files)
   doReload = false
   for _,file in pairs(files) do

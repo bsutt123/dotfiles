@@ -14,10 +14,11 @@ fi
 # Customize to your needs...
 
 # Powerlevel9k Changes
-
 DEFAULT_USER="$USER"
-
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
 # initialize rbenv
 eval "$(rbenv init -)"
