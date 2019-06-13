@@ -1,0 +1,15 @@
+echo 'Killing port 3000 processes'
+lsof -ti tcp:3000 | xargs kill -9
+echo 'Killing port 4000 processes'
+lsof -ti tcp:4000 | xargs kill -9
+echo 'Killing port 4123 processes'
+lsof -ti tcp:4123 | xargs kill -9
+echo 'Killing port 4124 processes'
+lsof -ti tcp:4124 | xargs kill -9
+echo 'Killing ruby processes'
+killall -9 ruby
+echo 'Killing java processes'
+killall -9 java
+spring stop & killall -9 fsevent_watch
+
+SPRING_TMP_PATH=${TMPDIR}/RMSpring bin/spring stop

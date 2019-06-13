@@ -127,9 +127,6 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 
-" Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<Space>
-
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
@@ -137,11 +134,6 @@ let g:html_indent_tags = 'li\|p'
 set splitbelow
 set splitright
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
 
 " Move between linting errors
 nnoremap ]r :ALENextWrap<CR>
@@ -165,27 +157,7 @@ endif
 set termguicolors
 colorscheme solarized8
 
-" " dark red
-" hi tsxTagName guifg=#E06C75
-" hi tsxCloseTag guifg=#E06C75
+set tags=./tags,tags;$HOME
 
-" " orange
-" hi tsxCloseString guifg=#F99575
-" hi tsxAttributeBraces guifg=#F99575
-" hi tsxEqual guifg=#F99575
-
-" " yellow
-" hi tsxAttrib guifg=#F8BD7F cterm=italic
-
-" " light-grey
-" hi tsxTypeBraces guifg=#999999
-" hi tsxTypes guifg=#666666
-
-" hi ReactState guifg=#C176A7
-" hi ReactProps guifg=#D19A66
-" hi Events ctermfg=204 guifg=#56B6C2
-" hi ReduxKeywords ctermfg=204 guifg=#C678DD
-" hi WebBrowser ctermfg=204 guifg=#56B6C2
-" hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66
 " Save and reload
 " vim:ft=vim

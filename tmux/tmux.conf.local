@@ -295,4 +295,7 @@ tmux_conf_copy_to_os_clipboard=false
 #set -g status-position top
 #
 set -g default-terminal "xterm-256color"
-set -f focus-events on
+# Enable names for panes
+set -g pane-border-status top
+unbind -n C-k
+bind -n C-p send-keys -R \; clear-history

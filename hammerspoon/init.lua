@@ -7,38 +7,6 @@ function moveCursorToCenter ()
   hs.mouse.setAbsolutePosition(center)
 end
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "H", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-
-  f.x = f.x - 10
-  win:setFrame(f)
-end)
-
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "J", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-
-  f.y = f.y + 10
-  win:setFrame(f)
-end)
-
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "K", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-
-  f.y = f.y - 10
-  win:setFrame(f)
-end)
-
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "L", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-
-  f.x = f.x + 10
-  win:setFrame(f)
-end)
-
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "F", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -109,7 +77,7 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Down", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"ctrl", "cmd","alt"}, "V", function()
+hs.hotkey.bind({"ctrl", "cmd","alt"}, "L", function()
   hs.application.launchOrFocus("Visual Studio Code")
   moveCursorToCenter()
 end)
@@ -124,12 +92,7 @@ hs.hotkey.bind({"ctrl", "cmd","alt"}, "S", function()
   moveCursorToCenter()
 end)
 
-hs.hotkey.bind({"ctrl", "cmd","alt"}, "M", function()
-  hs.application.launchOrFocus("Google Play Music Desktop Player")
-  moveCursorToCenter()
-end)
-
-hs.hotkey.bind({"ctrl", "cmd","alt"}, "T", function()
+hs.hotkey.bind({"ctrl", "cmd","alt"}, "D", function()
   hs.application.launchOrFocus("iTerm")
   moveCursorToCenter()
 end)
@@ -147,18 +110,13 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "N", function()
   currentWindow:moveToScreen(currentScreen:next())
 end)
 
-hs.hotkey.bind({"ctrl","alt","cmd"}, "U", function()
-  hs.application.launchOrFocus("Notes")
-  moveCursorToCenter()
-end)
-
-hs.hotkey.bind({"ctrl","alt","cmd"}, "E", function()
-  hs.application.launchOrFocus("Emacs")
-  moveCursorToCenter()
-end)
-
-hs.hotkey.bind({"ctrl","alt","cmd"}, "D", function()
+hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()
   hs.application.launchOrFocus("Tower")
+  moveCursorToCenter()
+end)
+
+hs.hotkey.bind({"ctrl","alt","cmd"}, "O", function()
+  hs.application.launchOrFocus("OmniFocus")
   moveCursorToCenter()
 end)
 

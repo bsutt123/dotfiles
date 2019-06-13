@@ -41,6 +41,7 @@ root: ~/patient_wisdom/blackbird
 
 windows:
   - Blackbird:
+      on_project_start: bundle install
       layout: 0ca0,208x55,0,0{104x55,0,0[104x27,0,0,6,104x27,0,28,9],103x55,105,0[103x27,105,0,7,103x27,105,28,8]}
 
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
@@ -67,7 +68,11 @@ windows:
         - Cerebro:
           - renamePane Cerebro
           - killPort 4000
+          - bundle install
           - rails s
+        - Cerebro Jobs Queue:
+          - renamePane rake:jobs
+          - rails jobs:work
 
   - Beast Testing:
       panes:
@@ -84,14 +89,14 @@ windows:
           - renamePane test:watch
           - yarn test:watch
 
-  - nvim:
+  - Beast nvim:
       layout: main-vertical
       panes:
         - nvim:
           - renamePane nvim
           - nvim
 
-  - nvim testing:
+  - Beast nvim testing:
       layout: main-vertical
       panes:
         - nvim:
@@ -102,4 +107,12 @@ windows:
           - renamePane runner
           - nvim
 
-  - Git: renamePane git
+  - Cerebro nvim:
+      root: ~/patient_wisdom/cerebro
+      panes:
+        - nvim: nvim
+
+  - Beast git: renamePane git
+
+  - Cerebro git:
+      root: ~/patient_wisdom/cerebro

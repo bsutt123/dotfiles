@@ -1,5 +1,6 @@
 " Ruby - More up to date Ruby filetype settings
 
 Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/rainbow-end'
 
 " vim:ft=vim

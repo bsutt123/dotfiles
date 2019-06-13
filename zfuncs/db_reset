@@ -1,0 +1,5 @@
+cd ~/patient_wisdom/blackbird/
+rails db:reset fixtures:load export:users
+cd ../cerebro
+rails db:reset import:users
+cd ../blackbird

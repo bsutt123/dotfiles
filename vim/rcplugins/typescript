@@ -1,7 +1,7 @@
 " TypeScript - Filetype and syntax settings
 
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'Quramy/tsuquyomi'
 
-" set filetypes as typescript.tsx
-"let g:typescript_indent_disable = 1
 
 " vim:ft=vim
