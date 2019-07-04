@@ -1,7 +1,6 @@
 " TypeScript - Filetype and syntax settings
 
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'Quramy/tsuquyomi'
 
 
 " vim:ft=vim

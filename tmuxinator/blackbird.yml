@@ -103,14 +103,18 @@ windows:
           - renamePane nvim-test
           - nvim
 
-        - runner:
-          - renamePane runner
-          - nvim
-
   - Cerebro nvim:
       root: ~/patient_wisdom/cerebro
       panes:
         - nvim: nvim
+
+  - Cerebro nvim testing:
+      layout: main-vertical
+      root: ~/patient_wisdom/cerebro
+      panes:
+        - nvim:
+          - renamePane nvim-test
+          - nvim
 
   - Beast git: renamePane git
 

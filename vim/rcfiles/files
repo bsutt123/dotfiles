@@ -1,6 +1,7 @@
 "" vim:ft=vim
 
 nnoremap <leader>qq :q<cr>
+nnoremap <leader>qa :qa!<cr>
 nnoremap <leader>qw :wq!<cr>
 nnoremap <leader>fs :w<cr>
 nnoremap <leader>qd :qa!<cr>
@@ -8,5 +9,7 @@ nnoremap <leader>qd :qa!<cr>
 nnoremap <leader>xx :x!<cr>
 
 nnoremap <leader>ee :e!<cr>
+
+noremap <silent><leader>rb :bufdo e!<cr>
 
 nnoremap <esc> :noh<return><esc>

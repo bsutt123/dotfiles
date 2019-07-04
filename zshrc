@@ -20,10 +20,15 @@ bindkey -v
 # Aliases
 alias tas="tmux attach-session -t"
 alias tls="tmux list-session"
+alias tks="tmux kill-session"
+alias td="tmux detach"
 
 alias mux="tmuxinator"
 
 alias szsh="source ~/.zshrc"
+
+alias be="bundle exec"
+alias rspec="./bin/rspec"
 
 # Add gettext to the path for nvim
 export PATH="/usr/local/opt/gettext/bin:$PATH"
@@ -52,6 +57,9 @@ stty icrnl
 # unset nomatch for rails [] compatibility
 unsetopt nomatch
 
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
+
 # NVM initialization
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -73,3 +81,5 @@ autoload -Uz killruby
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
 source ~/dotfiles/tmuxinator/tmuxinator.zsh
+
+

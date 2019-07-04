@@ -10,5 +10,6 @@ nnoremap <silent> <Leader>ts :TestSuite<CR>
 nnoremap <silent> <Leader>tv :TestVisit<CR>
 
 let test#strategy = 'vtr'
+let test#ruby#rspec#executable = './bin/rspec'
 let test#neovim#term_position = "topleft"
 "" vim:ft=vim

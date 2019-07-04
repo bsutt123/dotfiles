@@ -9,5 +9,5 @@ nmap <leader>ff :FZF<cr>
 " Search the hiestory
 nmap <leader>fh :History<cr>
 
-let FZF_DEFAULT_COMMAND='ag -g ""'
+let $FZF_DEFAULT_COMMAND='ag -g ""'
 " vim:ft=vim
