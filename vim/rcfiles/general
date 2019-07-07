@@ -155,6 +155,7 @@ if filereadable($HOME . "/.vimrc.local")
 endif
 
 set termguicolors
+set background=dark
 colorscheme solarized8
 
 set tags=./tags,tags;$HOME

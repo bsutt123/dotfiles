@@ -78,7 +78,7 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Down", function()
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "L", function()
-  hs.application.launchOrFocus("Visual Studio Code")
+  hs.application.launchOrFocus("VimR")
   moveCursorToCenter()
 end)
 
