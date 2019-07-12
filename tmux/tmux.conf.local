@@ -294,7 +294,7 @@ tmux_conf_copy_to_os_clipboard=false
 # move status line to top
 #set -g status-position top
 #
-set -g default-terminal "xterm-256color"
+set -g default-terminal "tmux-256color"
 # Enable names for panes
 set -g pane-border-status top
 unbind -n C-k

@@ -23,6 +23,8 @@ alias tls="tmux list-session"
 alias tks="tmux kill-session"
 alias td="tmux detach"
 
+alias gd="gatsby develop"
+
 alias mux="tmuxinator"
 
 alias szsh="source ~/.zshrc"
