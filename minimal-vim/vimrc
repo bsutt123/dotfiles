@@ -87,8 +87,17 @@ nnoremap <leader>ntt :NERDTreeToggle<cr>
 nnoremap <leader>ntr :NERDTreeFocus<cr>
 nnoremap <leader>ntf :NERDTreeFind<cr>
 
+"Search the files
+nmap <leader>ff :FZF<cr>
 
+" Search the hiestory
+nmap <leader>fh :History<cr>
+
+let $FZF_DEFAULT_COMMAND='ag -g ""'
+"
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()

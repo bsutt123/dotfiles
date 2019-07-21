@@ -96,7 +96,10 @@ autoload -Uz killruby
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
+
 source ~/dotfiles/tmuxinator/tmuxinator.zsh
 
-
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/araxis/utilities:$PATH"
