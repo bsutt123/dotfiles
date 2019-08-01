@@ -1,6 +1,10 @@
 windowSwitcher = hs.window.switcher.new()
 currentAppName = ""
 
+hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(window, appName)
+  setWindowSwitcher(appName)
+end)
+
 function moveCursorToCenter ()
   local currentApp = hs.application.frontmostApplication()
   local currentWindow = currentApp:focusedWindow()
@@ -96,7 +100,6 @@ end)
 
 function setOpenApp (appName)
   hs.application.launchOrFocus(appName)
-  setWindowSwitcher(appName)
   moveCursorToCenter()
 end
 
