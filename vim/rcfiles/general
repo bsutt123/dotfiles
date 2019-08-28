@@ -29,6 +29,7 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 filetype plugin indent on
+filetype plugin on
 
 augroup vimrcEx
   autocmd!
@@ -154,6 +155,7 @@ if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
+set t_Co=256
 set termguicolors
 colorscheme solarized8
 

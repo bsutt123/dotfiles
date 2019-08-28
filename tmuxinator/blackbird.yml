@@ -89,12 +89,10 @@ windows:
           - renamePane test:watch
           - yarn test:watch
 
-  - Beast nvim:
+  - Beast:
       layout: main-vertical
       panes:
         - nvim:
-          - renamePane nvim
-          - nvim
 
   - Beast nvim testing:
       layout: main-vertical
@@ -103,16 +101,15 @@ windows:
           - renamePane nvim-test
           - nvim
 
-        - runner:
-          - renamePane runner
-          - nvim
-
-  - Cerebro nvim:
+  - Cerebro:
       root: ~/patient_wisdom/cerebro
       panes:
-        - nvim: nvim
+        - nvim:
 
-  - Beast git: renamePane git
-
-  - Cerebro git:
+  - Cerebro nvim testing:
+      layout: main-vertical
       root: ~/patient_wisdom/cerebro
+      panes:
+        - nvim:
+          - renamePane nvim-test
+          - nvim

@@ -10,7 +10,7 @@ function! s:VisualAck()
   normal! gvy
   let escaped_pattern = escape(@", "[]().*")
   let @" = temp
-  execute "Ack! '" . escaped_pattern . "'"
+  execute "Ack! -Q '" . escaped_pattern . "'"
 endfunction
 
 

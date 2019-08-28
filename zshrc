@@ -20,10 +20,17 @@ bindkey -v
 # Aliases
 alias tas="tmux attach-session -t"
 alias tls="tmux list-session"
+alias tks="tmux kill-session"
+alias td="tmux detach"
+
+alias gd="gatsby develop"
 
 alias mux="tmuxinator"
 
 alias szsh="source ~/.zshrc"
+
+alias be="bundle exec"
+alias rspec="./bin/rspec"
 
 # Add gettext to the path for nvim
 export PATH="/usr/local/opt/gettext/bin:$PATH"
@@ -52,10 +59,26 @@ stty icrnl
 # unset nomatch for rails [] compatibility
 unsetopt nomatch
 
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
+
 # NVM initialization
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# auto switch node version
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # rbenv initialization
 
@@ -76,11 +99,18 @@ autoload -Uz killPort
 autoload -Uz db_reset
 autoload -Uz killruby
 
+
 # fzf installation
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
+
 source ~/dotfiles/tmuxinator/tmuxinator.zsh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/araxis/utilities:$PATH"

@@ -1,3 +1,10 @@
+windowSwitcher = hs.window.switcher.new()
+currentAppName = ""
+
+hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(window, appName)
+  setWindowSwitcher(appName)
+end)
+
 function moveCursorToCenter ()
   local currentApp = hs.application.frontmostApplication()
   local currentWindow = currentApp:focusedWindow()
@@ -5,6 +12,10 @@ function moveCursorToCenter ()
   local rect = currentScreen:fullFrame()
   local center = hs.geometry.rectMidPoint(rect)
   hs.mouse.setAbsolutePosition(center)
+end
+
+function setWindowSwitcher (appName)
+  windowSwitcher = hs.window.switcher.new(hs.window.filter.new(appName))
 end
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "F", function()
@@ -49,7 +60,17 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Right", function()
   win:setFrame(f)
 end)
 
+hs.hotkey.bind({"cmd","alt","ctrl"}, "H", function()
+  windowSwitcher:next()
+  moveCursorToCenter()
+end)
 
+hs.hotkey.bind({"cmd","alt","ctrl"}, "N", function()
+  local currentWindow = hs.window.frontmostWindow()
+  local currentScreen = currentWindow:screen()
+
+  currentWindow:moveToScreen(currentScreen:next())
+end)
 
 hs.hotkey.bind({"cmd","alt","ctrl"}, "Up", function()
   local win = hs.window.focusedWindow()
@@ -77,47 +98,41 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Down", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"ctrl", "cmd","alt"}, "L", function()
-  hs.application.launchOrFocus("Visual Studio Code")
+function setOpenApp (appName)
+  hs.application.launchOrFocus(appName)
   moveCursorToCenter()
+end
+
+hs.hotkey.bind({"ctrl", "cmd","alt"}, "L", function()
+  setOpenApp("VimR")
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "G", function()
-  hs.application.launchOrFocus("Google Chrome")
-  moveCursorToCenter()
+  setOpenApp("Google Chrome")
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "S", function()
-  hs.application.launchOrFocus("Slack")
-  moveCursorToCenter()
+  setOpenApp("Slack")
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "D", function()
-  hs.application.launchOrFocus("iTerm")
-  moveCursorToCenter()
+  setOpenApp("iTerm")
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "P", function()
-  hs.application.launchOrFocus("Postico")
-  moveCursorToCenter()
+  setOpenApp("Postico")
 end)
 
-
-hs.hotkey.bind({"cmd","alt","ctrl"}, "N", function()
-  local currentWindow = hs.window.frontmostWindow()
-  local currentScreen = currentWindow:screen()
-
-  currentWindow:moveToScreen(currentScreen:next())
+hs.hotkey.bind({"ctrl", "cmd","alt"}, "K", function()
+  setOpenApp("Paw")
 end)
 
 hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()
-  hs.application.launchOrFocus("Tower")
-  moveCursorToCenter()
+  setOpenApp("Tower")
 end)
 
 hs.hotkey.bind({"ctrl","alt","cmd"}, "O", function()
-  hs.application.launchOrFocus("OmniFocus")
-  moveCursorToCenter()
+  setOpenApp("OmniFocus")
 end)
 
 function reloadConfig(files)
@@ -131,5 +146,7 @@ function reloadConfig(files)
       hs.reload()
   end
 end
+
 myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+
 hs.alert.show("Config loaded")
