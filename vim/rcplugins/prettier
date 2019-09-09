@@ -1,8 +1,10 @@
-" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['ruby'] }
 
 nnoremap <leader>pip :call AddPragma()<cr>
 nnoremap <leader>pdp :call DeletePragma()<cr>
-nnoremap <leader>pf :Prettier<cr>
+nnoremap <leader>pf :PrettierAsync<cr>
 
 function! AddPragma()
   call append(line("gg"), "")
@@ -14,9 +16,6 @@ endfunction
 function! DeletePragma()
    0,4d
 endfunction
-
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 "" vim:ft=vim

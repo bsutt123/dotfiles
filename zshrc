@@ -38,6 +38,8 @@ export PATH="/usr/local/opt/gettext/bin:$PATH"
 # needed for qt5.5 to have the things it needs
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 
+export PATH="$PATH:$HOME/local_bin"
+
 # Powerlevel9k Changes
 DEFAULT_USER="$USER"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
