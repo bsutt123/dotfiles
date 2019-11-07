@@ -22,6 +22,7 @@ alias tas="tmux attach-session -t"
 alias tls="tmux list-session"
 alias tks="tmux kill-session"
 alias td="tmux detach"
+alias tmux="tmux -2"
 
 alias gd="gatsby develop"
 
@@ -31,6 +32,8 @@ alias szsh="source ~/.zshrc"
 
 alias be="bundle exec"
 alias rspec="./bin/rspec"
+
+alias bpurge="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
 
 # Add gettext to the path for nvim
 export PATH="/usr/local/opt/gettext/bin:$PATH"
@@ -68,19 +71,6 @@ source $HOME/.asdf/completions/asdf.bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# auto switch node version
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  elif [[ $(nvm version) != $(nvm version default)  ]]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # rbenv initialization
 eval "$(rbenv init -)"

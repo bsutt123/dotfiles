@@ -1,9 +1,4 @@
-windowSwitcher = hs.window.switcher.new()
 currentAppName = ""
-
-hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(window, appName)
-  setWindowSwitcher(appName)
-end)
 
 function moveCursorToCenter ()
   local currentApp = hs.application.frontmostApplication()
@@ -12,10 +7,6 @@ function moveCursorToCenter ()
   local rect = currentScreen:fullFrame()
   local center = hs.geometry.rectMidPoint(rect)
   hs.mouse.setAbsolutePosition(center)
-end
-
-function setWindowSwitcher (appName)
-  windowSwitcher = hs.window.switcher.new(hs.window.filter.new(appName))
 end
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "F", function()
@@ -60,12 +51,7 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Right", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd","alt","ctrl"}, "H", function()
-  windowSwitcher:next()
-  moveCursorToCenter()
-end)
-
-hs.hotkey.bind({"cmd","alt","ctrl"}, "N", function()
+hs.hotkey.bind({"ctrl"}, "N", function()
   local currentWindow = hs.window.frontmostWindow()
   local currentScreen = currentWindow:screen()
 

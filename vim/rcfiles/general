@@ -75,6 +75,14 @@ set shiftround
 set expandtab
 set autoindent
 
+" speed up
+set synmaxcol=400
+set foldmethod=syntax
+
+set nofoldenable
+set spell
+
+
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
@@ -156,10 +164,10 @@ if filereadable($HOME . "/.vimrc.local")
 endif
 
 set t_Co=256
+set background=dark
 set termguicolors
-colorscheme solarized8
 
-set tags=./tags,tags;$HOME
+colorscheme plastic
 
 " Save and reload
 " vim:ft=vim

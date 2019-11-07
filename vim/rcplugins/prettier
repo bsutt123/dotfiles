@@ -5,6 +5,7 @@ Plug 'prettier/vim-prettier', {
 nnoremap <leader>pip :call AddPragma()<cr>
 nnoremap <leader>pdp :call DeletePragma()<cr>
 nnoremap <leader>pf :PrettierAsync<cr>
+let g:prettier#config#config_precedence = 'file-override'
 
 function! AddPragma()
   call append(line("gg"), "")
@@ -18,4 +19,5 @@ function! DeletePragma()
 endfunction
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-"" vim:ft=vim
+
+" "" vim:ft=vim

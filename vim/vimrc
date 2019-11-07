@@ -4,6 +4,7 @@
 
 set nocompatible
 let mapleader = "\<Space>"
+set t_ut=
 
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/dotfiles/vim/' . a:directory . '/*'
