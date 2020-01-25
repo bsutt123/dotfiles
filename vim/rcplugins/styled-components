@@ -1,3 +1,3 @@
-Plug 'styled-components/vim-styled-components'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 "" vim:ft=vim

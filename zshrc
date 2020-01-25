@@ -23,6 +23,7 @@ alias tls="tmux list-session"
 alias tks="tmux kill-session"
 alias td="tmux detach"
 alias tmux="tmux -2"
+alias nvim="~/neovim/bin/nvim"
 
 alias gd="gatsby develop"
 
