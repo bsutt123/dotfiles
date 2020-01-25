@@ -38,9 +38,7 @@ alias bpurge="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs
 # Add gettext to the path for nvim
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
-# needed for qt5.5 to have the things it needs
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
-
 export PATH="$PATH:$HOME/local_bin"
 
 # Powerlevel9k Changes
@@ -81,6 +79,9 @@ autoload -Uz renamePane
 autoload -Uz killPort
 autoload -Uz db_reset
 autoload -Uz killruby
+autoload -Uz db_migrate
+autoload -Uz db_rollback
+autoload -Uz move_users
 
 
 # fzf installation

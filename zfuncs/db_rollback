@@ -1,0 +1,4 @@
+echo "Migrating development environment"
+rails db:rollback
+echo "Migrating test environment"
+rails db:rollback RAILS_ENV=test

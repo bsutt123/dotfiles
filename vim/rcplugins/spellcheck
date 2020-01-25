@@ -1,3 +1,12 @@
 Plug 'kamykn/spelunker.vim'
 
+let g:spelunker_check_type = 2
+
+nnoremap [s ZP
+nnoremap ]s ZN
+nnoremap <leader>sc ZL
+nnoremap <leader>sa Zg
+nnoremap <leader>st ZT
+nnoremap <leader>sla :SpelunkerAddAll<cr>
+
 " vim:ft=vim

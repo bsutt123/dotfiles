@@ -31,6 +31,44 @@ endif
 filetype plugin indent on
 filetype plugin on
 
+
+
+augroup SpellUnderline
+  autocmd!
+  autocmd ColorScheme *
+        \ highlight SpellBad
+        \   cterm=Underline
+        \   ctermfg=NONE
+        \   ctermbg=NONE
+        \   term=Reverse
+        \   gui=Undercurl
+        \   guisp=Red
+  autocmd ColorScheme *
+        \ highlight SpellCap
+        \   cterm=Underline
+        \   ctermfg=NONE
+        \   ctermbg=NONE
+        \   term=Reverse
+        \   gui=Undercurl
+        \   guisp=Red
+  autocmd ColorScheme *
+        \ highlight SpellLocal
+        \   cterm=Underline
+        \   ctermfg=NONE
+        \   ctermbg=NONE
+        \   term=Reverse
+        \   gui=Undercurl
+        \   guisp=Red
+  autocmd ColorScheme *
+        \ highlight SpellRare
+        \   cterm=Underline
+        \   ctermfg=NONE
+        \   ctermbg=NONE
+        \   term=Reverse
+        \   gui=Undercurl
+        \   guisp=Red
+augroup END
+
 augroup vimrcEx
   autocmd!
 
@@ -80,8 +118,6 @@ set synmaxcol=400
 set foldmethod=syntax
 
 set nofoldenable
-set spell
-
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
@@ -151,6 +187,7 @@ nnoremap [r :ALEPreviousWrap<CR>
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
 set spellfile=$HOME/.vim-spell-en.utf-8.add
+set nospell
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
@@ -166,8 +203,11 @@ endif
 set t_Co=256
 set background=dark
 set termguicolors
+colorscheme space-vim-dark
 
-colorscheme plastic
+" Override highlight setting.
+highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e
+highlight SpelunkerComplexOrCompoundWord cterm=underline ctermfg=NONE gui=underline guifg=NONE
 
 " Save and reload
 " vim:ft=vim

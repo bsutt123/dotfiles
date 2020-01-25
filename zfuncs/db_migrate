@@ -1,0 +1,4 @@
+echo "Migrating development environment"
+rails db:migrate
+echo "Migrating test environment"
+rails db:migrate RAILS_ENV=test

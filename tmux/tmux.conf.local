@@ -301,3 +301,6 @@ set -as terminal-overrides ',xterm*:sitm=\E[3m'
 set -g pane-border-status top
 unbind -n C-k
 bind -n C-p send-keys -R \; clear-history
+
+bind-key -n C-S-Left swap-window -t -1
+bind-key -n C-S-Right swap-window -t +1
