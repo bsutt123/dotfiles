@@ -7,5 +7,5 @@ function! FrozenString()
   call append(line("gg"), "# frozen_string_literal: true")
 endfunction
 
-nnoremap <leader>fsl :call FrozenString()<cr>
+nnoremap <leader>fl :call FrozenString()<cr>
 " vim:ft=vim
