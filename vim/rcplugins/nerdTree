@@ -2,6 +2,16 @@
 
 Plug 'scrooloose/nerdtree'
 
+let NERDTreeShowHidden=2
+" Inline menu with `m` shortcut
+let NERDTreeMinimalMenu=1
+" Hide help message, etc.
+let NERDTreeMinimalUI=1
+" Change current working directory based on root directory in NERDTree
+let NERDTreeChDirMode=2
+" Initial NERDTree width
+let NERDTreeWinSize=36
+
 " Tree mappings
 nnoremap <leader>ntt :NERDTreeToggle<cr>
 nnoremap <leader>ntr :NERDTreeFocus<cr>

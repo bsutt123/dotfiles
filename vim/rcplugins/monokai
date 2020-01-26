@@ -1,0 +1,4 @@
+Plug 'phanviet/vim-monokai-pro'
+Plug 'sickill/vim-monokai'
+
+"" vim:ft=vim
