@@ -300,7 +300,8 @@ set -as terminal-overrides ',xterm*:sitm=\E[3m'
 # Enable names for panes
 set -g pane-border-status top
 unbind -n C-k
-bind -n C-p send-keys -R \; clear-history
+bind -n C-] send-keys -R \; clear-history
 
+# swap windows to the left or right
 bind-key -n C-S-Left swap-window -t -1
 bind-key -n C-S-Right swap-window -t +1
