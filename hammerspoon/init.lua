@@ -1,4 +1,15 @@
-currentAppName = ""
+currentAppName = "NONE"
+windowFilter = hs.window.filter.new(false)
+windowSwitcher = hs.window.switcher.new(windowFilter)
+
+filters = {}
+
+hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(window, appName)
+  filters[currentAppName] = false
+  filters[appName] = true
+  currentAppName = appName
+  windowFilter = windowFilter:setFilters(filters)
+end)
 
 function moveCursorToCenter ()
   local currentApp = hs.application.frontmostApplication()
@@ -89,10 +100,6 @@ function setOpenApp (appName)
   moveCursorToCenter()
 end
 
-hs.hotkey.bind({"ctrl", "cmd","alt"}, "L", function()
-  setOpenApp("VimR")
-end)
-
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "G", function()
   setOpenApp("Google Chrome")
 end)
@@ -117,8 +124,9 @@ hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()
   setOpenApp("Tower")
 end)
 
-hs.hotkey.bind({"ctrl","alt","cmd"}, "O", function()
-  setOpenApp("OmniFocus")
+hs.hotkey.bind({"cmd","alt","ctrl"}, "H", function()
+  windowSwitcher:next()
+  moveCursorToCenter()
 end)
 
 function reloadConfig(files)
@@ -132,7 +140,5 @@ function reloadConfig(files)
       hs.reload()
   end
 end
-
-myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
 hs.alert.show("Config loaded")
