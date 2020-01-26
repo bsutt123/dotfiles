@@ -1,0 +1,21 @@
+name: pw-testing
+root: ~/patient_wisdom/blackbird
+
+windows:
+  - DevBundle:
+      panes:
+        - start:dev:test:
+          - renamePane start:dev:test
+          - yarn start:dev:test
+
+  - Mocha:
+      panes:
+        - Mocha Tests:
+          - renamePane test:watch
+          - yarn test:watch
+
+  - MockServer:
+     panes:
+       - mockserver:
+         - renamePane mockserver
+         - yarn mockserver
