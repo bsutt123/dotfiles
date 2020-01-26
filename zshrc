@@ -39,8 +39,14 @@ alias bpurge="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs
 # Add gettext to the path for nvim
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+# add anything in "local_bin" to the path
 export PATH="$PATH:$HOME/local_bin"
+
+# Add QT5.5 to the path for the godforsaken capybara webkit
+export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin:$PATH"
+
+# Add postgres 11 to the path
+export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
 
 # Powerlevel9k Changes
 DEFAULT_USER="$USER"
