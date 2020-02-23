@@ -5,17 +5,13 @@ endif
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 set termguicolors
 set background=dark
-set colorcolumn=120
-highlight ColorColumn ctermbg=0 guibg=#3d3d38
-set cursorline
-set number relativenumber
 set noshowmode
-set ruler
-set title
 set signcolumn=yes
 syntax on
+
 hi CursorLineNR cterm=bold
 set shortmess+=A " ignore .swp files
 
@@ -24,6 +20,8 @@ colorscheme monokai_pro
 " Override highlight setting.
 highlight SpelunkerSpellBad cterm=underline ctermfg=247 gui=underline guifg=#9e9e9e
 highlight SpelunkerComplexOrCompoundWord cterm=underline ctermfg=NONE gui=underline guifg=NONE
+
+highlight ColorColumn ctermbg=0 guibg=#3d3d38
 
 
 "" vim:ft=vim

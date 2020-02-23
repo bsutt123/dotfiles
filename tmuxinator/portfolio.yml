@@ -1,0 +1,6 @@
+name: portfolio
+root: ~/personal/portfolio/gatsby-portfolio
+
+windows:
+  - server: yarn develop
+  - nvim: nvim

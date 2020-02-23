@@ -299,9 +299,15 @@ set -g default-terminal "tmux-256color"
 set -as terminal-overrides ',xterm*:sitm=\E[3m'
 # Enable names for panes
 set -g pane-border-status top
+
+# swap windows to the left or right
+# bind-key -n C-S-Left swap-window -t -1
+# bind-key -n C-S-Right swap-window -t +1
+
+bind-key -n C-S-Left swap-window -t -1\; select-window -t -1
+bind-key -n C-S-Right swap-window -t +1\; select-window -t +1
+
 unbind -n C-k
 bind -n C-] send-keys -R \; clear-history
 
-# swap windows to the left or right
-bind-key -n C-S-Left swap-window -t -1
-bind-key -n C-S-Right swap-window -t +1
+

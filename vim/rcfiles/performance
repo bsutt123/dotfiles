@@ -21,6 +21,7 @@ set shiftround
 set expandtab
 set autoindent
 set nofoldenable
+set number
 
 augroup vimrcEx
   autocmd!
