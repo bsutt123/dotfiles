@@ -1,0 +1,4 @@
+" Copy current file path to system clipboard
+nnoremap <leader>p :let @+ = expand("%")<CR>
+
+"" vim:ft=vim

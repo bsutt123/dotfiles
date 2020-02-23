@@ -22,6 +22,8 @@ alias tas="tmux attach-session -t"
 alias tls="tmux list-session"
 alias tks="tmux kill-session"
 alias td="tmux detach"
+alias tmux="tmux -2"
+alias nvim="~/neovim/bin/nvim"
 
 alias gd="gatsby develop"
 
@@ -32,11 +34,19 @@ alias szsh="source ~/.zshrc"
 alias be="bundle exec"
 alias rspec="./bin/rspec"
 
+alias bpurge="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
+
 # Add gettext to the path for nvim
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 
-# needed for qt5.5 to have the things it needs
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+# add anything in "local_bin" to the path
+export PATH="$PATH:$HOME/local_bin"
+
+# Add QT5.5 to the path for the godforsaken capybara webkit
+export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin:$PATH"
+
+# Add postgres 11 to the path
+export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
 
 # Powerlevel9k Changes
 DEFAULT_USER="$USER"
@@ -67,19 +77,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# auto switch node version
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  elif [[ $(nvm version) != $(nvm version default)  ]]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
 # rbenv initialization
 
 if command -v rbenv &>/dev/null
@@ -98,6 +95,9 @@ autoload -Uz renamePane
 autoload -Uz killPort
 autoload -Uz db_reset
 autoload -Uz killruby
+autoload -Uz db_migrate
+autoload -Uz db_rollback
+autoload -Uz move_users
 
 
 # fzf installation

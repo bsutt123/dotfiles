@@ -1,6 +1,11 @@
 " Ruby - More up to date Ruby filetype settings
 
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/rainbow-end'
 
+function! FrozenString()
+  call append(line("gg"), "")
+  call append(line("gg"), "# frozen_string_literal: true")
+endfunction
+
+nnoremap <leader>fl :call FrozenString()<cr>
 " vim:ft=vim

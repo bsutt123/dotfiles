@@ -1,0 +1,29 @@
+name: pw-editing
+root: ~/patient_wisdom/blackbird
+
+windows:
+  - Beast:
+      layout: main-vertical
+      panes:
+        - nvim:
+
+  - Beast nvim testing:
+      layout: main-vertical
+      panes:
+        - nvim:
+          - renamePane nvim-test
+          - nvim
+
+  - Cerebro:
+      root: ~/patient_wisdom/cerebro
+      panes:
+        - nvim:
+
+  - Cerebro nvim testing:
+      root: ~/patient_wisdom/cerebro
+      panes:
+        - nvim:
+          - renamePane nvim-test
+          - nvim
+
+

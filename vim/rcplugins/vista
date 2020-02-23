@@ -1,0 +1,6 @@
+"" vim:ft=vim
+" Plug 'liuchengxu/vista.vim'
+
+" let g:vista_sidebar_width = 36
+" let g:vista_echo_cursor_strategy = 'both'
+" let g:vista_default_executive = 'coc'

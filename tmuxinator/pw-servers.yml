@@ -1,0 +1,35 @@
+name: pw-servers
+root: ~/patient_wisdom/blackbird
+
+windows:
+  - Beast:
+      panes:
+        - Beast:
+          - renamePane Beast
+          - killPort 3000
+          - rails s
+
+  - Cerebro:
+      root: ~/patient_wisdom/cerebro
+      panes:
+        - Cerebro:
+          - renamePane Cerebro
+          - killPort 4000
+          - rails s
+
+  - Mystique:
+      panes:
+        - Mystique:
+          - renamePane Mystique
+          - yarn start:dev
+
+  - Docker-MailHog:
+      panes:
+        - Docker:
+          - renamePane Docker
+          - docker-compose up
+
+        - MailHog:
+          - renamePane MailHog
+          - MailHog
+

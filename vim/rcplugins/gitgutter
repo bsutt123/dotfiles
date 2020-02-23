@@ -1,7 +1,0 @@
-"" vim:ft=vim
-
-Plug 'airblade/vim-gitgutter'
-
-nnoremap <leader>gge :GitGutterEnable<cr>
-nnoremap <leader>ggd :GitGutterDisable<cr>
-nnoremap <leader>ggt :GitGutterToggle<cr>

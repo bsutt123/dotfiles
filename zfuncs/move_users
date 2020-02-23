@@ -1,0 +1,5 @@
+cd ~/patient_wisdom/blackbird/
+rails export:users
+cd ../cerebro
+rails import:users
+cd ../blackbird

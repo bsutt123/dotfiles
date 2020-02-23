@@ -1,5 +1,0 @@
-Plug 'lifepillar/vim-solarized8'
-
-Plug 'altercation/vim-colors-solarized'
-
-"" vim:ft=vim

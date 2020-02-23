@@ -1,5 +1,0 @@
-"" vim:ft=vim
-
-Plug 'ruanyl/vim-fixmyjs'
-
-noremap <Leader>fe :Fixmyjs<CR>

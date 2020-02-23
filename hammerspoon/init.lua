@@ -1,8 +1,14 @@
-windowSwitcher = hs.window.switcher.new()
-currentAppName = ""
+currentAppName = "NONE"
+windowFilter = hs.window.filter.new(false)
+windowSwitcher = hs.window.switcher.new(windowFilter)
+
+filters = {}
 
 hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(window, appName)
-  setWindowSwitcher(appName)
+  filters[currentAppName] = false
+  filters[appName] = true
+  currentAppName = appName
+  windowFilter = windowFilter:setFilters(filters)
 end)
 
 function moveCursorToCenter ()
@@ -12,10 +18,6 @@ function moveCursorToCenter ()
   local rect = currentScreen:fullFrame()
   local center = hs.geometry.rectMidPoint(rect)
   hs.mouse.setAbsolutePosition(center)
-end
-
-function setWindowSwitcher (appName)
-  windowSwitcher = hs.window.switcher.new(hs.window.filter.new(appName))
 end
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "F", function()
@@ -60,12 +62,7 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Right", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd","alt","ctrl"}, "H", function()
-  windowSwitcher:next()
-  moveCursorToCenter()
-end)
-
-hs.hotkey.bind({"cmd","alt","ctrl"}, "N", function()
+hs.hotkey.bind({"ctrl"}, "N", function()
   local currentWindow = hs.window.frontmostWindow()
   local currentScreen = currentWindow:screen()
 
@@ -103,10 +100,6 @@ function setOpenApp (appName)
   moveCursorToCenter()
 end
 
-hs.hotkey.bind({"ctrl", "cmd","alt"}, "L", function()
-  setOpenApp("VimR")
-end)
-
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "G", function()
   setOpenApp("Google Chrome")
 end)
@@ -131,8 +124,9 @@ hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()
   setOpenApp("Tower")
 end)
 
-hs.hotkey.bind({"ctrl","alt","cmd"}, "O", function()
-  setOpenApp("OmniFocus")
+hs.hotkey.bind({"cmd","alt","ctrl"}, "H", function()
+  windowSwitcher:next()
+  moveCursorToCenter()
 end)
 
 function reloadConfig(files)
@@ -146,7 +140,5 @@ function reloadConfig(files)
       hs.reload()
   end
 end
-
-myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
 hs.alert.show("Config loaded")

@@ -1,3 +1,4 @@
 " Or install latest release tag
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
 "" vim:ft=vim

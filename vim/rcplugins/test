@@ -1,4 +1,3 @@
-
 Plug 'janko/vim-test'
 Plug 'christoomey/vim-tmux-runner'
 
@@ -10,6 +9,7 @@ nnoremap <silent> <Leader>ts :TestSuite<CR>
 nnoremap <silent> <Leader>tv :TestVisit<CR>
 
 let test#strategy = 'vtr'
-let test#ruby#rspec#executable = './bin/rspec'
+let test#ruby#rspec#executable = 'rspec'
+let test#ruby#cucumber#executable = 'bundle exec cucumber'
 let test#neovim#term_position = "topleft"
 "" vim:ft=vim

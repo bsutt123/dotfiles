@@ -1,9 +1,11 @@
 " JavaScript - JS syntax and indent settings, along with JSX support
 
-" Plug 'othree/yajs.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-" Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'sheerun/vim-polyglot'
+
+"  Plug 'othree/yajs.vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" " Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'Quramy/vim-js-pretty-template'
 
 autocmd BufEnter *.es6 setf javascript
