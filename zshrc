@@ -99,6 +99,7 @@ autoload -Uz db_migrate
 autoload -Uz db_rollback
 autoload -Uz move_users
 
+alias k='/Applications/kitty.app/Contents/MacOS/kitty @ --to unix:/tmp/mykitty'
 
 # fzf installation
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

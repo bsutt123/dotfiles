@@ -117,7 +117,7 @@ hs.hotkey.bind({"ctrl", "cmd","alt"}, "P", function()
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "K", function()
-  setOpenApp("Paw")
+  setOpenApp("kitty")
 end)
 
 hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()

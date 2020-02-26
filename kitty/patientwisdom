@@ -1,0 +1,8 @@
+cd ~/patient_wisdom/blackbird
+title beast
+launch zsh
+
+new_tab Cerebro
+cd ~/patient_wisdom/cerebro
+launch zsh
+

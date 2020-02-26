@@ -1,0 +1,26 @@
+cd ~/patient_wisdom/blackbird
+title beast
+launch zsh -c "rails s"
+
+new_tab mystique
+cd ~/patient_wisdom/blackbird
+launch zsh -c "yarn start:dev"
+
+new_tab Cerebro
+cd ~/patient_wisdom/cerebro
+launch zsh -c "rails s"
+
+new_tab docker
+cd ~/patient_wisdom/blackbird
+launch zsh -c "docker-compose up"
+launch zsh -c "MailHog"
+
+new_os_window
+
+cd ~/patient_wisdom/blackbird
+title beast-editing
+launch zsh
+
+new_tab cerebro-editing
+cd ~/patient_wisdom/cerebro
+launch zsh

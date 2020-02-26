@@ -8,7 +8,7 @@ nnoremap <silent> <Leader>tl :TestLast<CR>
 nnoremap <silent> <Leader>ts :TestSuite<CR>
 nnoremap <silent> <Leader>tv :TestVisit<CR>
 
-let test#strategy = 'vtr'
+let test#strategy = 'kitty'
 let test#ruby#rspec#executable = 'rspec'
 let test#ruby#cucumber#executable = 'bundle exec cucumber'
 let test#neovim#term_position = "topleft"
