@@ -300,6 +300,9 @@ set -as terminal-overrides ',xterm*:sitm=\E[3m'
 # Enable names for panes
 set -g pane-border-status top
 
+# set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+set -ga terminal-overrides ',*:Ss=\eE[%p1%d q:Se=\eE[2 q'
+
 # swap windows to the left or right
 # bind-key -n C-S-Left swap-window -t -1
 # bind-key -n C-S-Right swap-window -t +1

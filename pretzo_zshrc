@@ -1,0 +1,121 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+# use VIM mode in terminal
+
+bindkey -v
+
+# Aliases
+alias tas="tmux attach-session -t"
+alias tls="tmux list-session"
+alias tks="tmux kill-session"
+alias td="tmux detach"
+alias tmux="tmux -2"
+alias nvim="~/neovim/bin/nvim"
+
+alias gd="gatsby develop"
+
+alias mux="tmuxinator"
+
+alias szsh="source ~/.zshrc"
+
+alias be="bundle exec"
+alias rspec="./bin/rspec"
+
+alias bpurge="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
+
+# Add gettext to the path for nvim
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+
+# add anything in "local_bin" to the path
+export PATH="$PATH:$HOME/local_bin"
+
+# Add QT5.5 to the path for the godforsaken capybara webkit
+export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin:$PATH"
+
+# Add postgres 11 to the path
+export PATH="/usr/local/opt/postgresql@11/bin:$PATH"
+
+# Powerlevel9k Changes
+DEFAULT_USER="$USER"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+# Shorten the directory slightly
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+# Shorten the VCS display
+POWERLEVEL9K_VCS_SHORTEN_LENGTH=10
+POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=18
+POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
+POWERLEVEL9K_VCS_SHORTEN_DELIMITER=".."
+
+# avoid that weird ass ^M bug
+stty icrnl
+
+# unset nomatch for rails [] compatibility
+unsetopt nomatch
+
+if command -v asdf &>/dev/null
+then
+  source $HOME/.asdf/asdf.sh
+  source $HOME/.asdf/completions/asdf.bash
+end
+
+# NVM initialization
+if command -v nvm &>/dev/null
+then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+end
+# rbenv initialization
+
+if command -v rbenv &>/dev/null
+then
+  eval "$(rbenv init -)"
+fi
+
+if command -v rvm &>/dev/null
+then
+  export PATH="$PATH:$HOME/.rvm/bin"
+fi
+
+# add function to rename panes
+export FPATH="$HOME/.zfuncs:$FPATH"
+autoload -Uz renamePane
+autoload -Uz killPort
+autoload -Uz db_reset
+autoload -Uz killruby
+autoload -Uz db_migrate
+autoload -Uz db_rollback
+autoload -Uz move_users
+
+
+# fzf installation
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
+
+source ~/dotfiles/tmuxinator/tmuxinator.zsh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/araxis/utilities:$PATH"
