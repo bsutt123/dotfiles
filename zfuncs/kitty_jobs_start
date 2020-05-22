@@ -1,0 +1,2 @@
+kitty @ send-text --match title:beast-jobs "rails jobs:work \r"
+kitty @ send-text --match title:cerebro-jobs "rails jobs:work \r"

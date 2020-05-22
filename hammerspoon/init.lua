@@ -90,13 +90,14 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Down", function()
 
   f.x = f.x
   f.y = max.y / 2
-  f.h = max.h / 2
+  f.h = max.h
 
   win:setFrame(f)
 end)
 
 function setOpenApp (appName)
-  hs.application.launchOrFocus(appName)
+  apps = hs.application.find(appName)
+  apps:activate()
   moveCursorToCenter()
 end
 
@@ -127,6 +128,10 @@ end)
 hs.hotkey.bind({"cmd","alt","ctrl"}, "H", function()
   windowSwitcher:next()
   moveCursorToCenter()
+end)
+
+hs.hotkey.bind({"cmd","alt","ctrl"}, "U", function()
+  hs.application.launchOrFocus(currentAppName)
 end)
 
 function reloadConfig(files)

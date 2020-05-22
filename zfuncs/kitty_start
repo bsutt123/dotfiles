@@ -1,0 +1,15 @@
+kitty @ send-text --match title:beast-server "killPort 3000 \r"
+kitty @ send-text --match title:beast-server "rails s \r"
+
+kitty @ send-text --match title:cerebro-server "killPort 4000 \r"
+kitty @ send-text --match title:cerebro-server "rails s \r"
+
+kitty @ send-text --match title:mystique-server "killPort 8080 \r"
+kitty @ send-text --match title:mystique-server "killPort 9229 \r"
+kitty @ send-text --match title:mystique-server "yarn start:dev \r"
+
+kitty @ send-text --match title:docker-server "docker-compose up \r"
+kitty @ send-text --match title:mailhog-server "MailHog \r"
+
+kitty @ send-text --match title:mockserver "yarn mockserver \r"
+kitty @ send-text --match title:start-dev-test "yarn start:dev:test \r"

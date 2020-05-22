@@ -1,19 +1,38 @@
 cd ~/patient_wisdom/blackbird
-title beast
-launch zsh -c "rails s"
+title beast-server
+launch zsh
 
-new_tab mystique
+new_tab mystique_tab
 cd ~/patient_wisdom/blackbird
-launch zsh -c "yarn start:dev"
+title mystique-server
+launch zsh
 
-new_tab Cerebro
+new_tab cerebro_tab
 cd ~/patient_wisdom/cerebro
-launch zsh -c "rails s"
+title cerebro-server
+launch zsh
 
-new_tab docker
+new_tab docker_mailhog_tag
 cd ~/patient_wisdom/blackbird
-launch zsh -c "docker-compose up"
-launch zsh -c "MailHog"
+title docker-server
+launch zsh
+title mailhog-server
+launch zsh
+
+new_tab test_servers_tab
+cd ~/patient_wisdom/blackbird
+title mockserver
+launch zsh
+title start-dev-test
+launch zsh
+
+new_tab jobs_tab
+cd ~/patient_wisdom/blackbird
+title beast-jobs
+launch zsh
+cd ~/patient_wisdom/cerebro
+title cerebro-jobs
+launch zsh
 
 new_os_window
 
