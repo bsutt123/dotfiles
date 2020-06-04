@@ -20,6 +20,12 @@ function moveCursorToCenter ()
   hs.mouse.setAbsolutePosition(center)
 end
 
+function tablelength(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
+end
+
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "F", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -97,7 +103,11 @@ end)
 
 function setOpenApp (appName)
   apps = hs.application.find(appName)
-  apps:activate()
+  if (apps == nil or tablelength(apps:allWindows()) == 0) then
+    hs.application.launchOrFocus(appName)
+  else
+    apps:activate()
+  end
   moveCursorToCenter()
 end
 
@@ -145,5 +155,7 @@ function reloadConfig(files)
       hs.reload()
   end
 end
+
+myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
 hs.alert.show("Config loaded")
