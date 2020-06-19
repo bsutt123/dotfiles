@@ -116,11 +116,11 @@ hs.hotkey.bind({"ctrl", "cmd","alt"}, "G", function()
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "S", function()
-  setOpenApp("Slack")
+  setOpenApp("Spotify")
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "D", function()
-  setOpenApp("iTerm")
+  setOpenApp("Slack")
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "P", function()
