@@ -149,6 +149,7 @@ autoload -Uz db_rollback
 autoload -Uz move_users
 autoload -Uz kitty_start
 autoload -Uz kitty_jobs_start
+autoload -Uz killjs
 
 alias k="kitty -o allow_remote_control=yes --listen-on unix:/tmp/mykitty"
 

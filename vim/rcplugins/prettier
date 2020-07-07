@@ -1,0 +1,7 @@
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+let g:prettier#autoformat = 0
+let g:prettier#autoformat_require_pragma = 1
+let g:prettier#exec_cmd_path = "/Users/brady/.config/yarn/global/node_modules/.bin/prettier"
+
+"" vim:ft=vim
