@@ -1,0 +1,5 @@
+kitty @ send-text --match title:beast-server "rails s \r"
+kitty @ send-text --match title:cerebro-server "rails s \r"
+kitty @ send-text --match title:mystique-server "yarn start:dev \r"
+
+kitty @ send-text --match title:docker-server "docker-compose up \r"

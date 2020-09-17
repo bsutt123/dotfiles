@@ -12,14 +12,3 @@ kitty @ set-window-title mockserver
 kitty @ launch --type=tab --tab-title jobs_tab --cwd ~/patient_wisdom/blackbird
 kitty @ set-window-title beast-jobs
 kitty @ launch --title cerebro-jobs --cwd ~/patient_wisdom/cerebro
-
-kitty @ send-text --match title:beast-server "rails s \r"
-
-kitty @ send-text --match title:cerebro-server "rails s \r"
-
-kitty @ send-text --match title:mystique-server "yarn start:dev \r"
-
-kitty @ send-text --match title:docker-server "docker-compose up \r"
-kitty @ send-text --match title:mailhog-server "MailHog \r"
-
-kitty @ send-text --match title:mockserver "yarn mockserver \r"

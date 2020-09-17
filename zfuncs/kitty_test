@@ -1,0 +1,1 @@
+kitty @ send-text --match title:mockserver "yarn mockserver \r"
