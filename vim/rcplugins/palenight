@@ -1,6 +1,0 @@
-" Plug 'drewtempelmeyer/palenight.vim'
-" Plug 'joshdick/onedark.vim'
-" Plug 'altercation/vim-colors-solarized'
-Plug 'lifepillar/vim-solarized8'
-
-"" vim:ft=vim
