@@ -40,7 +40,7 @@ if executable('ag')
 endif
 
 " Make it obvious where 80 characters is
-set textwidth=80
+au BufRead,BufNewFile *.md, *.mdx setlocal textwidth=80
 
 " Numbers
 set numberwidth=5

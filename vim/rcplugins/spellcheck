@@ -1,7 +1,8 @@
 Plug 'kamykn/spelunker.vim'
 
-let g:spelunker_check_type = 2
 set nospell
+
+let g:spelunker_check_type = 2
 
 nmap [s ZP
 nmap ]s ZN
