@@ -1,0 +1,1 @@
+kitty @ send-text --match title:docker-server "docker-compose up \r"

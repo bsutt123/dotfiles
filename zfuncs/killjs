@@ -1,0 +1,8 @@
+echo 'Killing port 8080 processes'
+lsof -ti tcp:8080 | xargs kill -9
+echo 'Killing port 8081 processes'
+lsof -ti tcp:8081 | xargs kill -9
+echo 'Killing port 8082 processes'
+lsof -ti tcp:8082 | xargs kill -9
+echo 'killing node processes'
+killall node

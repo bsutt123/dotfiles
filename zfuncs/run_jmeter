@@ -1,0 +1,5 @@
+cd ~/patient_wisdom/blackbird
+rm -rf ~/patient_wisdom/blackbird/jmeter
+mkdir .~/patient_wisdom/blackbird/jmeter
+
+sh ~/apache-jmeter-5.3/bin/jmeter -n -t ~/patient_wisdom/blackbird/PWAlpha.jmx -l ~/patient_wisdom/blackbird/jmeter/results -e -o ~/patient_wisdom/blackbird/jmeter/output/

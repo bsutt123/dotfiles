@@ -97,8 +97,8 @@ command! -nargs=0 Format :call CocAction('format')
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " create prettier command
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
+command! -nargs=0 CocPrettier :CocCommand prettier.formatFile
+nnoremap <leader>pf :CocPrettier<cr>
 
 " Using CocList
 " Show all diagnostics

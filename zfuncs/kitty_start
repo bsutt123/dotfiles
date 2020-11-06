@@ -1,15 +1,18 @@
-kitty @ send-text --match title:beast-server "killPort 3000 \r"
-kitty @ send-text --match title:beast-server "rails s \r"
-
-kitty @ send-text --match title:cerebro-server "killPort 4000 \r"
-kitty @ send-text --match title:cerebro-server "rails s \r"
-
-kitty @ send-text --match title:mystique-server "killPort 8080 \r"
-kitty @ send-text --match title:mystique-server "killPort 9229 \r"
-kitty @ send-text --match title:mystique-server "yarn start:dev \r"
-
-kitty @ send-text --match title:docker-server "docker-compose up \r"
-kitty @ send-text --match title:mailhog-server "MailHog \r"
-
-kitty @ send-text --match title:mockserver "yarn mockserver \r"
-kitty @ send-text --match title:start-dev-test "yarn start:dev:test \r"
+kitty @ launch --type=tab --tab-title beast-server --cwd ~/patient_wisdom/blackbird
+kitty @ set-window-title beast-server
+kitty @ launch --type=tab --tab-title mystique --cwd ~/patient_wisdom/blackbird/express
+kitty @ set-window-title mystique-build-styles
+kitty @ launch --title mystique-build-server --cwd ~/patient_wisdom/blackbird/express
+kitty @ launch --title mystique-start-server --cwd ~/patient_wisdom/blackbird/express
+kitty @ launch --title mystique-start-client --cwd ~/patient_wisdom/blackbird/express
+kitty @ goto-layout grid
+kitty @ launch --type=tab --tab-title cerebro-server --cwd ~/patient_wisdom/cerebro
+kitty @ set-window-title cerebro-server
+kitty @ launch --type=tab --tab-title docker_mailhog_tab --cwd ~/patient_wisdom/blackbird
+kitty @ set-window-title docker-server
+kitty @ launch --title mailhog-server --cwd ~/patient_wisdom/blackbird
+kitty @ launch --type=tab --tab-title mockserver --cwd ~/patient_wisdom/blackbird
+kitty @ set-window-title mockserver
+kitty @ launch --type=tab --tab-title jobs_tab --cwd ~/patient_wisdom/blackbird
+kitty @ set-window-title beast-jobs
+kitty @ launch --title cerebro-jobs --cwd ~/patient_wisdom/cerebro
