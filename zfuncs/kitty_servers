@@ -1,5 +1,6 @@
 kitty @ send-text --match title:beast-server "rails s \r"
 kitty @ send-text --match title:cerebro-server "rails s \r"
-kitty @ send-text --match title:mystique-server "yarn start:dev \r"
-
-kitty @ send-text --match title:docker-server "docker-compose up \r"
+kitty @ send-text --match title:mystique-build-styles "yarn build:styles:watch\r"
+kitty @ send-text --match title:mystique-build-server "yarn build:server:watch\r"
+kitty @ send-text --match title:mystique-start-server "yarn start:dev:server\r"
+kitty @ send-text --match title:mystique-start-client "yarn start:dev:client\r"
