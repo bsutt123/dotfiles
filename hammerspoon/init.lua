@@ -49,7 +49,7 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Left", function()
   f.x = max.x
   f.y = f.y
   f.w = max.w / 2
-  f.h = max.h
+  f.h = f.h
 
   win:setFrame(f)
 end)
@@ -63,7 +63,7 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Right", function()
   f.x = f.x + max.w / 2
   f.y = f.y
   f.w = max.w / 2
-  f.h = max.h
+  f.h = f.h
 
   win:setFrame(f)
 end)
@@ -83,6 +83,7 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Up", function()
 
   f.x = f.x
   f.y = max.y
+  f.w = f.w
   f.h = max.h / 2
 
   win:setFrame(f)
@@ -95,8 +96,9 @@ hs.hotkey.bind({"cmd","alt","ctrl"}, "Down", function()
   local max = screen:frame()
 
   f.x = f.x
-  f.y = max.y / 2
-  f.h = max.h
+  f.y = max.h / 2
+  f.h = max.h / 2
+  f.w = f.w
 
   win:setFrame(f)
 end)
