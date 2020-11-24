@@ -1,4 +1,49 @@
 " Or install latest release tag
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
+
+Plug 'neoclide/coc-css', { 'do': 'yarn install --frozen-lockfile' }
+autocmd FileType scss setl iskeyword+=@-@
+
+" Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
+
+" Plug 'neoclide/coc-emmet', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'neoclide/coc-eslint', { 'do': 'yarn install --frozen-lockfile' }
+
+" Plug 'neoclide/coc-git' { 'do': 'yarn install --frozen-lockfile' } not
+" recommended yet, they say to use vim-fugitive
+
+" requires vim-graphql
+" Plug 'felippepuhle/coc-graphql', { 'do': 'yarn install --frozen-lockfile' }
+
+" Plug 'neoclide/coc-highlight', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'neoclide/coc-html', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'neoclide/coc-json', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'neoclide/coc-snippets', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'neoclide/coc-solargraph', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'fannheyward/coc-sql', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'iamcco/coc-svg', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'neoclide/coc-yaml', { 'do': 'yarn install --frozen-lockfile' }
+
+" Plug 'neoclide/coc-yank', { 'do': 'yarn install --frozen-lockfile' }
+
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+
+let g:coc_global_extensions = [
+        \  'coc-css',
+        \  'coc-elixir',
+        \  'coc-emmet',
+        \  'coc-eslint',
+        \  'coc-graphql',
+        \  'coc-highlight',
+        \  'coc-html',
+        \  'coc-json',
+        \  'coc-snippets',
+        \  'coc-solargraph',
+        \  'coc-sql',
+        \  'coc-svg',
+        \  'coc-tsserver',
+        \  'coc-yaml',
+        \  'coc-yank' ]
 
 "" vim:ft=vim
