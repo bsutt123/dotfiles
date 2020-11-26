@@ -1,9 +1,7 @@
 Plug 'honza/vim-snippets'
 
 " Use <C-l> for trigger snippet expand.
-imap <C-p> <Plug>(coc-snippets-expand)
-
-nmap <Leader>se <Plug>(coc-snippets-expand)
+imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use <C-j> for select text for visual placeholder of snippet.
 vmap <C-j> <Plug>(coc-snippets-select)
