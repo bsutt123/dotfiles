@@ -1,12 +1,33 @@
-mapleader="/<space>"
+let mapleader = " "
+set surround
+set sneak
+
 nnoremap <leader>so :source ~/.ideavimrc<cr>
 
+"Saving
 nnoremap <leader>fs :action SaveAll<cr>
-nnoremap <leader>fc :action ReformatCode<cr>
-nnoremap <leader>ff :action GotoFile<cr>
 
+" Navigation
+nnoremap <leader>b :action Back<cr>
+nnoremap <leader>n :action Forward<cr>
+nnoremap <leader>ff :action GotoFile<cr>
+nnoremap <leader>gu :action GotoDeclaration<cr>
+nnoremap <leader>gd :action GotoImplementation<cr>
+
+
+" Opening and Closing Files
+nnoremap <leader>c :action CloseContent<cr>
+
+" Formatting
+nnoremap <leader>fc :action ReformatCode<cr>
+nnoremap <leader>ef :action Javascript.Linters.EsLint.Fix<cr>
+
+"Test
 nnoremap <leader>gtt :action GotoTest<cr>
 nnoremap <leader>rrf :action RerunFailedTests<cr>
 nnoremap <leader>rrt :action RerunTest<cr>
+nnoremap <leader>tn :action RunClass<cr>
+nnoremap <leader>tf :action Run<cr>
 
+nnoremap <leader>hh :action HideActiveWindow<cr>
 
