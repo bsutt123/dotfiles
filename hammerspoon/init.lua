@@ -137,6 +137,11 @@ hs.hotkey.bind({"ctrl", "cmd","alt"}, "J", function()
   setOpenApp("IntelliJ IDEA")
 end)
 
+hs.hotkey.bind({"ctrl", "cmd","alt"}, "R", function()
+  setOpenApp("RubyMine")
+end)
+
+
 hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()
   setOpenApp("Tower")
 end)
