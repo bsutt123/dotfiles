@@ -1,0 +1,12 @@
+mapleader="/<space>"
+nnoremap <leader>so :source ~/.ideavimrc<cr>
+
+nnoremap <leader>fs :action SaveAll<cr>
+nnoremap <leader>fc :action ReformatCode<cr>
+nnoremap <leader>ff :action GotoFile<cr>
+
+nnoremap <leader>gtt :action GotoTest<cr>
+nnoremap <leader>rrf :action RerunFailedTests<cr>
+nnoremap <leader>rrt :action RerunTest<cr>
+
+

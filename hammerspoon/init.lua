@@ -133,6 +133,10 @@ hs.hotkey.bind({"ctrl", "cmd","alt"}, "K", function()
   setOpenApp("kitty")
 end)
 
+hs.hotkey.bind({"ctrl", "cmd","alt"}, "J", function()
+  setOpenApp("IntelliJ IDEA")
+end)
+
 hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()
   setOpenApp("Tower")
 end)
