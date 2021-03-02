@@ -1,6 +1,7 @@
 let mapleader = " "
 set surround
 set sneak
+set NERDTree
 
 nnoremap <leader>so :source ~/.ideavimrc<cr>
 
@@ -29,5 +30,14 @@ nnoremap <leader>rrt :action RerunTest<cr>
 nnoremap <leader>tn :action RunClass<cr>
 nnoremap <leader>tf :action Run<cr>
 
-nnoremap <leader>hh :action HideActiveWindow<cr>
+"NERDTree
+nnoremap <leader>ntt :NERDTreeToggle<cr>
+nnoremap <leader>nn :NERDTree<cr>
+nnoremap <leader>ntf :NERDTreeFocus<cr>
+
+"Quit stuff
+
+nnoremap <leader>qq :action CloseContent<cr>
+nnoremap <leader>qo :action CloseAllEditorsButActive<cr>
+nnoremap <leader>qa :action CloseAllEditors<cr>
 

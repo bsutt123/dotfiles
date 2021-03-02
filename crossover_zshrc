@@ -2,17 +2,18 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/brady/.oh-my-zsh"
+export ZSH="/Users/crossover/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
+ZSH_DISABLE_COMPFIX=true
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -33,7 +34,7 @@ ZSH_THEME="agnoster"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -45,6 +46,8 @@ ZSH_THEME="agnoster"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -64,8 +67,8 @@ ZSH_THEME="agnoster"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git asdf)
@@ -97,79 +100,42 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-# Aliases
-alias tas="tmux attach-session -t"
-alias tls="tmux list-session"
-alias tks="tmux kill-session"
-alias td="tmux detach"
-alias tmux="tmux -2"
-# alias nvim="~/neovim/bin/nvim"
-alias gd="gatsby develop"
-alias mux="tmuxinator"
-alias szsh="source ~/.zshrc"
-alias be="bundle exec"
-alias rspec="./bin/rspec"
-alias bpurge="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
-alias ngrok="~/ngrok/ngrok"
 
-# avoid that weird ass ^M bug
+
+alias szsh="source ~/.zshrc"
+alias bpurge="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
+
 stty icrnl
 
-# unset nomatch for rails [] compatibility
 unsetopt nomatch
 
-source $HOME/.asdf/asdf.sh
-source $HOME/.asdf/completions/asdf.bash
-autoload -Uz compinit && compinit
 
-# NVM initialization
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# ASDF setup
 
-# rbenv initialization
-if command -v rbenv &>/dev/null
-then
-  eval "$(rbenv init -)"
-fi
-
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-
-if command -v rvm &>/dev/null
-then
-  export PATH="$PATH:$HOME/.rvm/bin"
-fi
-# add function to rename panes
-export FPATH="$HOME/.zfuncs:$FPATH"
-autoload -Uz renamePane
-autoload -Uz killPort
-autoload -Uz db_reset
-autoload -Uz killruby
-autoload -Uz db_migrate
-autoload -Uz db_rollback
-autoload -Uz move_users
-autoload -Uz kitty_start
-autoload -Uz kitty_jobs
-autoload -Uz kitty_servers
-autoload -Uz kitty_test
-autoload -Uz kitty_docker
-autoload -Uz killjs
-autoload -Uz run_jmeter
-
-bindkey -v
-
-alias k="kitty -o allow_remote_control=yes --listen-on unix:/tmp/mykitty"
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit
+compinit
 
 # fzf installation
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND='ag -g ""'
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export FPATH="$HOME/.zfuncs:$FPATH"
+
+autoload -Uz renamePane
+autoload -Uz killPort
+autoload -Uz kitty_start
+autoload -Uz kitty_docs
+autoload -Uz kitty_servers
+
+export FZF_DEFAULT_COMMAND='ag -g ""'
 export PATH="$HOME/araxis/utilities:$PATH"
 export PATH="$HOME/.asdf/shims:$PATH"
-export PATH="$HOME/neovim/bin:$PATH"
-export PATH="$PATH:$HOME/apache-jmeter-5.3/bin"
-# export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+export PATH="/Applications/Postgres.app/Contents/Versions/13/bin/pg_config:$PATH"
 export EDITOR='nvim'
+
+bindkey -v
