@@ -125,8 +125,12 @@ hs.hotkey.bind({"ctrl", "cmd","alt"}, "D", function()
   setOpenApp("Slack")
 end)
 
+hs.hotkey.bind({"ctrl", "cmd","alt"}, "M", function()
+  setOpenApp("Mattermost")
+end)
+
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "P", function()
-  setOpenApp("Postico")
+  setOpenApp("DataGrip")
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "K", function()
@@ -134,16 +138,21 @@ hs.hotkey.bind({"ctrl", "cmd","alt"}, "K", function()
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "J", function()
-  setOpenApp("IntelliJ IDEA")
+  setOpenApp("WebStorm")
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "R", function()
   setOpenApp("RubyMine")
 end)
 
+hs.hotkey.bind({"ctrl", "cmd","alt"}, "U", function()
+  setOpenApp("Visual Studio")
+end)
+
+
 
 hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()
-  setOpenApp("Tower")
+  setOpenApp("GitKraken")
 end)
 
 hs.hotkey.bind({"cmd","alt","ctrl"}, "H", function()
