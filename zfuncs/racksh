@@ -1,0 +1,3 @@
+cd ~/crossover/xo-web/api
+
+client=TEST bundle exec raCKSH

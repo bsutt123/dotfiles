@@ -1,0 +1,3 @@
+cd ~/crossover/xo-web/virtual-app/shared
+npm run generate
+npm run build

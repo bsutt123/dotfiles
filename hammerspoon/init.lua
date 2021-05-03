@@ -145,11 +145,9 @@ hs.hotkey.bind({"ctrl", "cmd","alt"}, "R", function()
   setOpenApp("RubyMine")
 end)
 
-hs.hotkey.bind({"ctrl", "cmd","alt"}, "U", function()
-  setOpenApp("Visual Studio")
+hs.hotkey.bind({"ctrl", "cmd","alt"}, "V", function()
+  setOpenApp("Visual Studio Code")
 end)
-
-
 
 hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()
   setOpenApp("GitKraken")

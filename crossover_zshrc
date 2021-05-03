@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias szsh="source ~/.zshrc"
 alias bpurge="git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
+alias bclean="git branch --merged | egrep -v '(^\*|master|main|dev)' | xargs git branch -d"
 
 stty icrnl
 
@@ -129,6 +130,13 @@ autoload -Uz killPort
 autoload -Uz kitty_start
 autoload -Uz kitty_docs
 autoload -Uz kitty_servers
+autoload -Uz build_types
+autoload -Uz racksh
+autoload -Uz db_reset
+autoload -Uz save_db
+autoload -Uz load_db
+autoload -Uz load_calculator
+autoload -Uz start_cms
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export PATH="$HOME/araxis/utilities:$PATH"

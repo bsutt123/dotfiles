@@ -1,0 +1,3 @@
+cd ~/crossover/xo-web/api
+CLIENT=test bundle exec rake "screenings:update_pros_screening_templates_with_xop_content"
+

@@ -1,0 +1,2 @@
+cd ~/crossover/xo-web/api
+CLIENT=test bundle exec rake db:reset
