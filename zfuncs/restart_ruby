@@ -1,0 +1,3 @@
+killPort 4005
+sleep .5
+kitty @ send-text --match title:api "rackup \r"

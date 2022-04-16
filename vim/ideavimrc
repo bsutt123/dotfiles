@@ -3,7 +3,8 @@ set surround
 set sneak
 set NERDTree
 
-nnoremap <leader>so :source ~/.ideavimrc<cr>
+
+nnoremap <leader>si :source ~/.ideavimrc<cr>
 
 "Saving
 nnoremap <leader>fs :action SaveAll<cr>
@@ -40,4 +41,7 @@ nnoremap <leader>ntf :NERDTreeFocus<cr>
 nnoremap <leader>qq :action CloseContent<cr>
 nnoremap <leader>qo :action CloseAllEditorsButActive<cr>
 nnoremap <leader>qa :action CloseAllEditors<cr>
+
+nnoremap <leader>uu :action EditorIncreaseFontSize<cr>
+nnoremap <leader>dd :action EditorDecreaseFontSize<cr>
 

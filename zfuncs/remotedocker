@@ -1,0 +1,1 @@
+export DOCKER_HOST=tcp://docker.crossoverhealth.org:2376 DOCKER_TLS_VERIFY=1

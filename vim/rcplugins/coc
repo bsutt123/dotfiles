@@ -2,7 +2,9 @@
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
 
 Plug 'neoclide/coc-css', { 'do': 'yarn install --frozen-lockfile' }
+
 autocmd FileType scss setl iskeyword+=@-@
+
 
 " Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
@@ -44,6 +46,7 @@ let g:coc_global_extensions = [
         \  'coc-svg',
         \  'coc-tsserver',
         \  'coc-yaml',
-        \  'coc-yank' ]
+        \  'coc-yank',
+        \  'coc-prettier']
 
 "" vim:ft=vim

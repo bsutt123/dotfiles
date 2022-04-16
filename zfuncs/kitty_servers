@@ -1,3 +1,10 @@
 kitty @ send-text --match title:auth "npm start \r"
-kitty @ send-text --match title:web "npm run start:app \r"
+kitty @ send-text --match title:web "npm start \r"
+kitty @ send-text --match title:shared "npm start \r"
 kitty @ send-text --match title:api "rackup \r"
+
+kitty @ send-text "mysql.server stop \r"
+kitty @ send-text "mysql.server start \r"
+
+kitty @ send-text "nginx -s stop \r"
+kitty @ send-text "nginx -c ~/crossover/xo-web/virtual-app/native/local-dev.conf \r"

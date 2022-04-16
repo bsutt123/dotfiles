@@ -18,6 +18,6 @@ endfunction
 nnoremap K :Ack! "\b<C-R><C-W>\b"<CR>:cw<CR>
 vnoremap K :<C-u>call <sid>VisualAck()<cr>
 
-let g:ackprg = 'ag --nogroup --nocolor --column --ignore node_modules'
+let g:ackprg = 'ag --nogroup --nocolor --column --ignore node_modules --ignore build'
 
 " vim:ft=vim

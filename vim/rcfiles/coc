@@ -11,6 +11,8 @@ set nowritebackup
 set cmdheight=3
 set pyxversion=3
 
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " let g:coc_force_debug = 1
 
 "  Smaller updatetime for CursorHold & CursorHoldI

@@ -1,0 +1,7 @@
+cd ~/crossover/xo-web
+
+DOCKER_HOST=tcp://docker.crossoverhealth.org:2376 \
+  DOCKER_TLS_VERIFY=1 COMPOSE_PROJECT_NAME=msft \
+  DOTENVCRYPT=$(cat sites/nearsite/.env.cryptkey) \
+  SITE=nearsite \
+  docker-compose logs -f api

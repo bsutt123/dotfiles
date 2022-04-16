@@ -1,0 +1,11 @@
+cd ~/crossover/xo-web/api
+
+rm -rf ~/crossover/xo-web/sites/nearsite/hl7
+
+CLIENT=nearsite bundle exec rake ops:sample_appointment_hl7[5332]
+CLIENT=nearsite bundle exec rake ops:sample_appointment_hl7[5332,S13,REMINDER]
+
+CLIENT=nearsite bundle exec rake ops:sample_appointment_hl7[5326]
+CLIENT=nearsite bundle exec rake ops:sample_appointment_hl7[5326,S13,REMINDER]
+
+

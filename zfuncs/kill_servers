@@ -1,0 +1,6 @@
+echo 'Killing port 3001 processes'
+lsof -ti tcp:3000 | xargs kill -9
+echo 'Killing port 4005 processes'
+lsof -ti tcp:4005 | xargs kill -9
+echo 'Killing port 8080 processes'
+lsof -ti tcp:8080 | xargs kill -9

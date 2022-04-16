@@ -1,0 +1,7 @@
+helm install brady chart -f chart/dev-values.yaml --set-string core.jwtSecret=y2jh12z8t4hxb78zb9eg80nf
+helm install debug debug_chart -f chart/dev-values.yaml --set-string releaseName=brady
+sleep 2m
+kubectl exec deploy/debug-xo-cms-debug -c rubycode -- bundle exec rake db:reset
+kubectl exec deploy/debug-xo-cms-debug -c rubycode -- bundle exec rake db:test:prepare
+
+

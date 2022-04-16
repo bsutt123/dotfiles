@@ -2,10 +2,10 @@ kitty @ launch --type=tab --tab-title auth --cwd ~/crossover/xo-web/auth
 kitty @ set-window-title auth
 
 kitty @ launch --type=tab --tab-title web --cwd ~/crossover/xo-web/virtual-app/web
-kitty @ set-window-title web
+kitty @ launch --title shared --cwd ~/crossover/xo-web/virtual-app/shared
 
 kitty @ launch --type=tab --tab-title api --cwd ~/crossover/xo-web/api
 kitty @ set-window-title api
 
-kitty @ launch --type=tab --tab-title docs --cwd ~/crossover/xo-web/virtual-app/web
-kitty @ set-window-title docs
+kitty @ launch --type=tab --tab-title docs --cwd ~/crossover/xo-web/virtual-app/native
+kitty @ set-window-title native

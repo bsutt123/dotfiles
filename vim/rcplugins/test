@@ -8,7 +8,11 @@ nnoremap <silent> <Leader>ts :TestSuite<CR>
 nnoremap <silent> <Leader>tv :TestVisit<CR>
 
 let test#strategy = 'kitty'
-let test#ruby#rspec#executable = 'bundle exec spring rspec'
-let test#ruby#cucumber#executable = 'bundle exec spring cucumber'
+let test#ruby#rspec#executable = 'bundle exec rspec'
+let test#ruby#cucumber#executable = 'bundle exec cucumber'
+
+let g:test#javascript#runner = 'jest'
+let test#javascript#jest#file_pattern = '\.spec\.ts'
+let test#javascript#jest#executable = "npm run jest"
 let test#neovim#term_position = "topleft"
 "" vim:ft=vim

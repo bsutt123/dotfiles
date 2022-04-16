@@ -138,19 +138,19 @@ hs.hotkey.bind({"ctrl", "cmd","alt"}, "K", function()
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "J", function()
-  setOpenApp("WebStorm")
+  setOpenApp("IntelliJ IDEA")
 end)
 
-hs.hotkey.bind({"ctrl", "cmd","alt"}, "R", function()
-  setOpenApp("RubyMine")
-end)
+-- hs.hotkey.bind({"ctrl", "cmd","alt"}, "R", function()
+--   setOpenApp("RubyMine")
+-- end)
 
-hs.hotkey.bind({"ctrl", "cmd","alt"}, "V", function()
-  setOpenApp("Visual Studio Code")
-end)
+-- hs.hotkey.bind({"ctrl", "cmd","alt"}, "V", function()
+--   setOpenApp("Visual Studio Code")
+-- end)
 
 hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()
-  setOpenApp("GitKraken")
+  setOpenApp("Tower")
 end)
 
 hs.hotkey.bind({"cmd","alt","ctrl"}, "H", function()
