@@ -1,6 +1,6 @@
 - name: setup machine
   hosts: localhost
-  become: true
+  become: True
   vars:
     - nodejs_major_version: 16
     - asdf_version_branch: v0.9.0
@@ -13,27 +13,6 @@
         update_cache: true
       tags:
         - zsh
-
-    - name: change zsh shell
-      shell: chsh -s $(which zsh)
-      become: True
-      tags:
-        - zsh
-    - name: install oh my zsh
-      shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-      become: True
-      tags:
-        - zsh
-    - name: get zsh path
-      shell: which zsh
-      register: zsh_path
-
-    - name: change shell to zsh
-      user:
-        name: root
-        shell: /usr/bin/zsh
-      become: True
-
     - name: clone asdf
       ansible.builtin.git:
         repo: https://github.com/asdf-vm/asdf.git
@@ -42,36 +21,34 @@
       become: True
       tags:
         - asdf
-    - name: Load asdf in .zshrc
-      blockinfile:
-        dest: ~/.zshrc
-        marker: "# {mark} ANSIBLE MANAGED BLOCK: asdf"
-        block: |
-          if [ -e "$HOME/.asdf/asdf.sh" ]; then
-            source $HOME/.asdf/asdf.sh
-            source $HOME/.asdf/completions/asdf.bash
-          fi
-      become: true
+
+    - name: change zsh shell
+      shell: chsh -s $(which zsh)
       tags:
-        - asdf
-    - name: reload zsh shell
-      shell: source ~/.zshrc
+        - zsh
+    - name: install oh my zsh
+      shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
       tags:
-        - asdf
+        - zsh
+    - name: move old .zshrc
+      shell: mv ~/.zshrc ~/.zshrc.old
+
+    - name: stow zshrc
+      shell: stow oh-my-zsh
+
+    - name: set zsh as default shell
+      shell: chsh -h $(which zsh)
 
     - name: add node asdf plugin
       shell: asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-      become: True
       tags:
         - node
     - name: install node
       shell: asdf install nodejs latest:{{ nodejs_major_version }}
-      become: True
       tags:
         - node
     - name: set global node version
       shell:  asdf global nodejs latest:{{ nodejs_major_version }}
-      become: True
 
     - name: add nvim repo
       ansible.builtin.apt_repository:
