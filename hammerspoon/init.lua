@@ -2,22 +2,14 @@ currentAppName = "NONE"
 windowFilter = hs.window.filter.new(false)
 windowSwitcher = hs.window.switcher.new(windowFilter)
 
-filters = {}
-
-hs.window.filter.default:subscribe(hs.window.filter.windowFocused, function(window, appName)
-  filters[currentAppName] = false
-  filters[appName] = true
-  currentAppName = appName
-  windowFilter = windowFilter:setFilters(filters)
-end)
 
 function moveCursorToCenter ()
   local currentApp = hs.application.frontmostApplication()
   local currentWindow = currentApp:focusedWindow()
   local currentScreen = currentWindow:screen()
-  local rect = currentScreen:fullFrame()
-  local center = hs.geometry.rectMidPoint(rect)
-  hs.mouse.setAbsolutePosition(center)
+  local rectangle = currentScreen:fullFrame()
+  local center = hs.geometry.rectMidPoint(rectangle)
+  hs.mouse.absolutePosition(center)
 end
 
 function tablelength(T)
@@ -134,16 +126,16 @@ hs.hotkey.bind({"ctrl", "cmd","alt"}, "P", function()
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "K", function()
-  setOpenApp("kitty")
+  setOpenApp("iTerm")
 end)
 
 hs.hotkey.bind({"ctrl", "cmd","alt"}, "J", function()
-  setOpenApp("IntelliJ IDEA")
+  setOpenApp("WebStorm")
 end)
 
--- hs.hotkey.bind({"ctrl", "cmd","alt"}, "R", function()
---   setOpenApp("RubyMine")
--- end)
+hs.hotkey.bind({"ctrl", "cmd","alt"}, "R", function()
+  setOpenApp("RubyMine")
+end)
 
 -- hs.hotkey.bind({"ctrl", "cmd","alt"}, "V", function()
 --   setOpenApp("Visual Studio Code")
@@ -152,28 +144,5 @@ end)
 hs.hotkey.bind({"ctrl","alt","cmd"}, "T", function()
   setOpenApp("Tower")
 end)
-
-hs.hotkey.bind({"cmd","alt","ctrl"}, "H", function()
-  windowSwitcher:next()
-  moveCursorToCenter()
-end)
-
-hs.hotkey.bind({"cmd","alt","ctrl"}, "U", function()
-  hs.application.launchOrFocus(currentAppName)
-end)
-
-function reloadConfig(files)
-  doReload = false
-  for _,file in pairs(files) do
-      if file:sub(-4) == ".lua" then
-          doReload = true
-      end
-  end
-  if doReload then
-      hs.reload()
-  end
-end
-
-myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 
 hs.alert.show("Config loaded")

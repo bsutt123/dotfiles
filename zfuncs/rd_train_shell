@@ -1,0 +1,9 @@
+cd ~/crossover/xo-web
+
+DOCKER_HOST=tcp://docker2.crossoverhealth.org:2376 \
+ DOCKER_TLS_VERIFY=1 \
+ DOCKER_CERT_PATH=$HOME/.docker/dock2/
+ COMPOSE_PROJECT_NAME="train_ns" \
+ DOTENVCRYPT=`cat sites/nearsite/.env.cryptkey` \
+ SITE="nearsite" \
+ docker-compose exec api /bin/ash

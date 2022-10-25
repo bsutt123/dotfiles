@@ -7,4 +7,4 @@ kitty @ send-text "mysql.server stop \r"
 kitty @ send-text "mysql.server start \r"
 
 kitty @ send-text "nginx -s stop \r"
-kitty @ send-text "nginx -c ~/crossover/xo-web/virtual-app/native/local-dev.conf \r"
+kitty @ send-text "nginx -c ~/crossover/xo-web/native/local-dev.conf \r"

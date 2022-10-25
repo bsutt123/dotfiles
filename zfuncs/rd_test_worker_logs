@@ -1,0 +1,6 @@
+ cd ~/crossover/xo-web
+
+ COMPOSE_PROJECT_NAME="test_ns" \
+  DOTENVCRYPT=`cat sites/nearsite/.env.cryptkey` \
+  SITE="nearsite" \
+  docker-compose logs -f workers

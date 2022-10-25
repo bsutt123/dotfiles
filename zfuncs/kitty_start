@@ -7,5 +7,5 @@ kitty @ launch --title shared --cwd ~/crossover/xo-web/virtual-app/shared
 kitty @ launch --type=tab --tab-title api --cwd ~/crossover/xo-web/api
 kitty @ set-window-title api
 
-kitty @ launch --type=tab --tab-title docs --cwd ~/crossover/xo-web/virtual-app/native
+kitty @ launch --type=tab --tab-title docs --cwd ~/crossover/xo-web/native
 kitty @ set-window-title native
